@@ -39,7 +39,6 @@ ORDER BY promedio_prevalencia DESC
 LIMIT 10;
 
 -- CONSULTA 2: Filtros y Agregación - Tendencia temporal de depresión (años 2010+)
--- Utiliza: WHERE, GROUP BY, AVG, HAVING, ORDER BY
 SELECT 
     anio,
     ROUND(AVG(depresion), 4) as promedio_depresion,
@@ -51,26 +50,8 @@ GROUP BY anio
 HAVING AVG(depresion) > 3.0
 ORDER BY anio;
 
--- CONSULTA 3: JOIN - Comparación entre décadas por país
--- Utiliza: JOIN (self-join), agregaciones, filtros
-SELECT 
-    d1.pais,
-    ROUND(AVG(d1.promedio_prevalencia), 4) as promedio_decada_2000,
-    ROUND(AVG(d2.promedio_prevalencia), 4) as promedio_decada_2010,
-    ROUND(AVG(d2.promedio_prevalencia) - AVG(d1.promedio_prevalencia), 4) as diferencia,
-    COUNT(DISTINCT d1.anio) as registros_2000s,
-    COUNT(DISTINCT d2.anio) as registros_2010s
-FROM prevalencia_salud_mental d1
-JOIN prevalencia_salud_mental d2 
-    ON d1.pais = d2.pais
-WHERE d1.decada = 2000 AND d2.decada = 2010
-GROUP BY d1.pais
-HAVING COUNT(DISTINCT d1.anio) >= 5 AND COUNT(DISTINCT d2.anio) >= 5
-ORDER BY diferencia DESC
-LIMIT 15;
 
--- CONSULTA 4: Agregación por Década - Promedio de prevalencia por década
--- Utiliza: GROUP BY, AVG, COUNT, ORDER BY
+-- CONSULTA 3: Agregación por Década - Promedio de prevalencia por década
 SELECT 
     decada,
     COUNT(*) as num_registros,
@@ -82,8 +63,7 @@ FROM prevalencia_salud_mental
 GROUP BY decada
 ORDER BY decada;
 
--- CONSULTA 5: Filtros Avanzados - Países con alta prevalencia de múltiples enfermedades
--- Utiliza: WHERE múltiple, AND, ORDER BY
+-- CONSULTA 4: Países con alta prevalencia de múltiples enfermedades
 SELECT 
     pais,
     anio,
@@ -99,6 +79,5 @@ WHERE depresion > 4.0
 ORDER BY promedio_prevalencia DESC
 LIMIT 20;
 
--- ----------------------------------------------------------------------------
 -- FIN DEL SCRIPT
--- ============================================================================
+-- 
