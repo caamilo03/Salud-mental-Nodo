@@ -1,6 +1,5 @@
--- ============================================================================
 -- Script SQL: Creación de Tablas y Consultas - Salud Mental
--- ============================================================================
+-- 
 
 -- 1. CREACIÓN DE TABLAS
 
@@ -25,7 +24,6 @@ CREATE TABLE IF NOT EXISTS prevalencia_salud_mental (
 -- 2. CONSULTAS SQL 
 
 -- CONSULTA 1: Agregación - Top 10 países con mayor prevalencia promedio
--- Utiliza: GROUP BY, AVG, ORDER BY, LIMIT
 SELECT 
     pais,
     codigo_pais,
