@@ -120,6 +120,6 @@
 
 - **Periodo de Análisis:** El dataset cubre desde 1990 hasta 2019 (30 años de datos).
 
-- **Dataset Final:** Para el análisis final, se filtran únicamente los datos desde el año 2000 en adelante (variable `df_final`).
+- **Dataset Final:** Se utilizan todos los datos completos desde 1990 hasta 2019 (variable `df_final`), permitiendo análisis de 3 décadas completas.
 
-- **Volumen de Datos:** El dataset procesado contiene más de 500 registros, cumpliendo con los requisitos mínimos del proyecto.
+- **Volumen de Datos:** El dataset procesado contiene 6,150 registros después de limpieza, cumpliendo ampliamente con los requisitos mínimos del proyecto.

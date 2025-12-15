@@ -1,13 +1,8 @@
 -- ============================================================================
 -- Script SQL: Creación de Tablas y Consultas - Salud Mental
 -- ============================================================================
--- Proyecto: Análisis de Prevalencia de Enfermedades Mentales (2000-2019)
--- Base de Datos: Supabase (PostgreSQL)
--- ============================================================================
 
--- ----------------------------------------------------------------------------
 -- 1. CREACIÓN DE TABLAS
--- ----------------------------------------------------------------------------
 
 -- Tabla principal: prevalencia_salud_mental
 CREATE TABLE IF NOT EXISTS prevalencia_salud_mental (
@@ -27,9 +22,7 @@ CREATE TABLE IF NOT EXISTS prevalencia_salud_mental (
     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
--- ----------------------------------------------------------------------------
 -- 2. CONSULTAS SQL 
--- ----------------------------------------------------------------------------
 
 -- CONSULTA 1: Agregación - Top 10 países con mayor prevalencia promedio
 -- Utiliza: GROUP BY, AVG, ORDER BY, LIMIT
